@@ -1,1 +1,2 @@
-# Bi-objective-vehicle-routing-integrating-k-shortest-paths-
+# Bi-objective-vehicle-routing-integrating-k-shortest-paths:
+For some commercial truck companies, they will keep tracking the driving information such as location and the safety related critical events on the road. According to this information, we can find the location and speed for each driver. Further, the weather can be obtained by using Darksky.API. According to these trip information, we can extract the road network for those truck drivers, then implementing data analytics and optimization tools to help the driver to select the best route between two points considering the risk and real travel time. The entire work can be divided into three steps:
