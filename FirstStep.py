@@ -5,7 +5,8 @@ Created on Thu Feb 11 08:41:28 2021
 @author: huqio
 """
 
-"The implementation is largely influenced by the Yen's algorithm in Wikipedia and beegeesquare's implementation on github"
+"The implementation is largely influenced by the Yen's algorithm in Wikipedia\
+and beegeesquare's implementation on github"
 
 import networkx as nx
 from copy import deepcopy
@@ -18,60 +19,6 @@ import csv
 #import math
 import numpy as np
 import pandas as pd
-#nodes_file=csv.reader(open('nodes.csv','r'));
-#links_file=csv.reader(open('lk_risks.csv','r'));
-nodes_file=csv.reader(open('nodes_chi_nash.csv','r'));
-links_file=csv.reader(open('links_chi_nash_0201.csv','r'));
-
-
-
-G_network=nx.Graph()
-G_network_distance=nx.Graph()
-#G_network_time= nx.Graph()
-#G_risk_poisson= nx.Graph()
-#G_risk_xgboost= nx.Graph()
-#G_risk_ANN= nx.Graph()
-def G_network(nodes_file, link_file):
-    G_network=nx.Graph()
-    G_network_distance=nx.Graph()
-    tmp=0
-    for row in nodes_file:
-        if (tmp>0):
-            G_network.add_node(row[0])
-            G_network_distance.add_node(row[0])
-    #        G_risk_logit.add_node(row[0])
-    #        G_risk_poisson.add_node(row[0])
-    #        G_risk_xgboost.add_node(row[0])
-    #        G_risk_ANN.add_node(row[0])
-    #        
-            
-        tmp=+1
-    
-    
-    tmp=0
-    for row in links_file:
-        if (tmp>0): # Ignores the first line in the file
-    #        print(tmp)
-            G_network.add_edge(row[1],row[2]);
-            G_network[row[1]][row[2]]['weight']=float(row[4]);
-            G_network_distance.add_edge(row[1],row[2]);
-            G_network_distance[row[1]][row[2]]['weight']=float(row[3]);
-    #        G_network[row[0]][row[1]]['weight']="{:.2f}".format(row[2]);
-    #        "{:.2f}".format(3.1415926)
-    #        first risk model
-    #        G_risk_logit.add_edge(row[0],row[1]);
-    #        G_risk_logit[row[0]][row[1]]['weight']=float(row[3]);
-    ##        second risk model
-    #        G_risk_poisson.add_edge(row[0],row[1]);
-    #        G_risk_poisson[row[0]][row[1]]['weight']=float(row[4]);
-    #        G_risk_xgboost.add_edge(row[0],row[1]);
-    #        G_risk_xgboost[row[0]][row[1]]['weight']=float(row[5]);
-    #        G_risk_ANN.add_edge(row[0],row[1]);
-    #        G_risk_ANN[row[0]][row[1]]['weight']=float(row[6]);
-            
-        tmp+=1;
-    return(G_network)
-G_network=G_network(nodes_file, links_file)
     
 #redefine the network and find the total risk for each path    
 #G_network_distance
@@ -214,6 +161,10 @@ def yen(G,source,target,K):
                 break;
 
     return (A, A_cost)
+
+
+
+
 
 #src='Nashville';
 #tgt='Gary';
